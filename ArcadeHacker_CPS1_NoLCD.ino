@@ -47,15 +47,14 @@ unsigned char bytes[][18] = {
 
 };
 
-char* CPSB21_List[] = 
-  { 
-  };
+char* CPSB21_List[] = { };
   
 unsigned char mask = 1; // Bit 
 unsigned char bits[8];
 int c = -1;
 
 void setup() {
+  
   Serial.begin(9600);
 
   pinMode(PIN42, OUTPUT); pinMode(PIN44, OUTPUT);
@@ -65,28 +64,32 @@ void setup() {
   digitalWrite(PIN44, LOW);
 
   DisplayIntro();
+  
 }
 
-void DisplayIntro()
-{
+void DisplayIntro() {
+  
   Serial.println("CPS1 Desuicide By ArcadeHacker Version 1.07n");
   Serial.println("NoLCD Mod By Fraido");
+  
 }
 
-void PIN42CLK()
-{
+void PIN42CLK() {
+  
     digitalWrite(PIN42, HIGH); delay(time);
     digitalWrite(PIN42, LOW); delay(time);
+  
 }
 
-void PIN61CLK()
-{
+void PIN61CLK() {
+  
     digitalWrite(PIN61, HIGH); delay(time);
     digitalWrite(PIN61, LOW); delay(time);
+  
 }
 
-void program_unlock()
-{
+void program_unlock() {
+  
     digitalWrite(PIN44, HIGH);
     delay(time);
     delay(time);
@@ -120,11 +123,11 @@ void program_unlock()
     PIN61CLK();
     PIN61CLK();
     PIN61CLK();
-    
-   
+  
 } 
 
 void ProgramCPS1(int prg) {
+  
    int i;
    int test;
 
@@ -155,9 +158,9 @@ void ProgramCPS1(int prg) {
    Serial.println("Disconnect and test pcb.");                         
 
    pinMode(PIN42, INPUT); pinMode(PIN44, INPUT);
-   pinMode(PIN61, INPUT); pinMode(PIN62, INPUT); 
-}
-             
+   pinMode(PIN61, INPUT); pinMode(PIN62, INPUT);
+  
+}            
 
 void loop() {
 
